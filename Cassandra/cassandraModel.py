@@ -281,3 +281,4 @@ def get_symbol_trades_history(session, account, symbolTrade, dates):
         stmt = session.prepare(SELECT_SYMBOL_TRADES_FROM_HISTORY_BY_DATE) # para ejecutar un query lo necesito preparar ya que aqui se identifican los ? para cambiarlos por los parametros
         rows = session.execute(stmt, [account, symbolTrade, dates[0], dates[1]]) # y despues ya puedo ejecutar ese query con esta linea de código, aqui se cambian los ? por los parametros de un arreglo
     print(tabulate(rows, headers=["Account", "Date", "Type", "Symbol", "Shares", "Price", "Amount"], tablefmt="rounded_grid"))
+
